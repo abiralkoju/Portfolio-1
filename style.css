@@ -1,0 +1,819 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Overpass:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+:root {
+  --white: rgb(255, 255, 255);
+  --black: rgb(18, 30, 39);
+  --orange: #ff715b;
+  --dark-orange: #e2745c;
+  --primary-font: "Roboto", sans-serif;
+  --bold-font: "Poppins", sans-serif;
+  --dwarf-font: "Open Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.about-container {
+  background-color: var(--black);
+  width: 100%;
+}
+
+/* clouds-animation */
+
+.cloud.one {
+  top: 30%;
+  width: 60px;
+  height: 20px;
+  animation-duration: 25s;
+  opacity: 0.8;
+}
+
+.cloud.two {
+  top: 60%;
+  width: 120px;
+  height: 40px;
+  animation-duration: 28s;
+  opacity: 0.8;
+}
+
+.cloud.three {
+  top: 45%;
+  width: 105px;
+  height: 25px;
+  animation-duration: 30s;
+  opacity: 0.7;
+}
+
+.cloud.four {
+  top: 32%;
+  width: 80px;
+  height: 30px;
+  animation-duration: 38s;
+  opacity: 0.6;
+}
+
+.cloud.five {
+  top: 47%;
+  width: 100px;
+  height: 20px;
+  animation-duration: 35s;
+  opacity: 0.5;
+}
+
+.cloud.six {
+  top: 80%;
+  width: 200px;
+  height: 40px;
+  animation-duration: 45s;
+  opacity: 0.4;
+}
+
+.cloud {
+  position: absolute;
+  left: 0;
+  background-color: white;
+  border-radius: 1000px;
+  animation: zoomies 5s infinite linear;
+}
+
+.cloud::before {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: 10%;
+  width: 50%;
+  height: 150%;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.cloud::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: 20%;
+  width: 30%;
+  height: 100%;
+  background-color: white;
+  border-radius: 50%;
+}
+
+@keyframes zoomies {
+  from {
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    left: 100%;
+    transform: translateX(0%);
+  }
+}
+
+/*nav-bar starts here*/
+.navbar {
+  display: inline-block;
+  width: 100%;
+}
+
+.navbar #name {
+  display: flex;
+  justify-content: center;
+  margin: 0.8rem;
+  color: var(--white);
+  font-size: 1.6rem;
+  font-family: "Montserrat Subrayada", sans-serif;
+  cursor: pointer;
+}
+
+/* hamburger menu starts here */
+.nav-items ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  margin-bottom: 0.75rem;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  border-bottom: 4px solid #ff715b;
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+.nav-items li a:hover {
+  border-bottom: double 4px var(--orange);
+}
+
+.toggle-button {
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 15px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 10px;
+}
+/*hamburger menu ends here*/
+
+/*about me-intro section starts here*/
+
+.about-cover {
+  padding: 0 2rem;
+}
+
+.about {
+  color: var(--white);
+  font-size: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 10rem 3rem 1rem; */
+  position: relative;
+  padding: 10rem 0rem 5rem;
+}
+
+.about-title {
+  padding-bottom: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 350;
+}
+
+.about-title-job {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 113, 91, 0) 70%,
+    rgba(255, 113, 91, 1) 30%
+  );
+}
+
+/*social-media logos here*/
+.about-logo {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.about-logo i {
+  padding: 1rem 1.6rem 1rem 0px;
+  font-size: 2.2rem;
+  color: var(--orange);
+  opacity: 0.9;
+  transition: 0.5s;
+}
+
+.about-logo i:hover {
+  opacity: 1;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/*social-media logo ends here*/
+
+.about-paragraph {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 50;
+  font-size: 1.3rem;
+  opacity: 0.7;
+}
+
+/*my-skill container starts here*/
+.skill-container {
+  background-color: var(--white);
+}
+
+.skill-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.2rem;
+  margin-top: 4rem;
+  margin-left: 2.5rem;
+}
+
+.skill-title h3 {
+  font-weight: 400;
+}
+
+.skill-title h3 span {
+  border-bottom: 4px solid var(--orange);
+}
+
+.skill-title h3 span:hover {
+  border-bottom: double 8px var(--orange);
+}
+
+.profile-image {
+  margin: 2rem;
+}
+
+.profile-image img {
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.my-skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0rem 3rem;
+}
+
+.my-skills h5 {
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1.3rem;
+  margin: 0.3rem;
+  padding: 0.5rem;
+}
+
+/* CV container starts here */
+.CV {
+  font-family: var(--primary-font);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.CV span {
+  color: var(--orange);
+}
+
+/* CV button starts here */
+.CV-btn:first-of-type {
+  text-decoration: none;
+  background-color: var(--orange);
+  color: var(--white);
+  z-index: 100;
+  transform: translate3d(-8px, -8px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transition: transform 0.2s ease-in-out 0s;
+  position: absolute;
+  left: 2rem;
+}
+
+.CV-btn:last-of-type {
+  z-index: 0;
+  border: 2px solid var(--black);
+  position: absolute;
+  color: transparent;
+  left: 2rem;
+}
+
+.CV-btn {
+  font-family: var(--primary-font);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+}
+
+.CV-btn:first-of-type:hover {
+  background-color: var(--dark-orange);
+  z-index: 100;
+  transform: translate3d(2px, 2px, 2px);
+}
+/*CV button ends here*/
+
+/*bio about me starts here*/
+.bio {
+  margin: 4rem 2rem 4rem;
+}
+
+.bio h3 {
+  font-family: var(--bold-font);
+  font-weight: bolder;
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.bio p {
+  font-family: var(--primary-font);
+  font-weight: 350;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-top: 0.8rem;
+  line-height: 0.8cm;
+}
+/*bio about me ends here*/
+
+/*my project container starts here*/
+
+/* project heading */
+
+.my-projects {
+  margin-top: 10rem;
+}
+
+.project-main-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.2rem;
+  margin-left: 2rem;
+}
+
+.project-main-title span {
+  border-bottom: 4px solid var(--orange);
+}
+
+.project-main-title span:hover {
+  border-bottom: double 8px var(--orange);
+}
+
+/*project sub title / my position in a project*/
+.project-sub-title {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  font-family: var(--dwarf-font);
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/*project-titles*/
+.project-title {
+  margin-top: 1.5rem;
+  margin-left: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 3.5rem;
+}
+
+.project-skill {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.project-skill h5 {
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1.3rem;
+  margin: 0.3rem;
+  padding: 0.5rem;
+}
+
+.project-skill-para p {
+  margin-top: 1.5rem;
+  margin-left: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  opacity: 0.8;
+  line-height: 0.8cm;
+  letter-spacing: 0.5px;
+}
+
+.view-project-btn .CV-btn {
+  margin-top: 1.8rem;
+}
+
+.project-img {
+  margin-top: 9rem;
+}
+
+.project-img img {
+  height: 22rem;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 20px;
+  transition: 0.4s ease-in-out;
+  box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project-img img.thank-you-img {
+  margin-top: 3rem;
+  width: 24rem;
+  height: 24.5rem;
+}
+
+.project-img img:hover {
+  cursor: pointer;
+  transform: translate(0px, -2rem);
+  box-shadow: rgb(88 88 88) 0px 40px 15px -10px;
+}
+
+.project-2 {
+  margin-top: 8rem;
+}
+
+.project-2 > .project-img > img {
+  width: 25rem;
+  object-fit: contain;
+  background: linear-gradient(45deg, #8bd6c5, #ec949475);
+}
+
+/*lets have a chat section*/
+.lets-chat {
+  margin-top: 12rem;
+  height: 40vh;
+}
+
+.lets-chat h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.lets-chat > h2 > span {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 113, 91, 0) 70%,
+    rgba(255, 113, 91, 1) 30%
+  );
+}
+
+.lets-chat-email {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--orange);
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.lets-chat > .view-project-btn > .CV-btn {
+  margin: 3rem;
+}
+
+footer {
+  height: 45vh;
+  background-color: var(--black);
+  margin-top: 6rem;
+}
+
+footer > .copyright {
+  color: var(--white);
+  margin: 1rem 1rem;
+  padding: 2rem;
+}
+
+footer > .copyright > h3 {
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-family: var(--primary-font);
+}
+
+footer > .copyright > h6 {
+  font-family: var(--dwarf-font);
+  font-size: 0.8rem;
+  font-weight: lighter;
+}
+
+.logo-title {
+  color: var(--orange);
+  font-size: 1rem;
+  font-family: var(--bold-font);
+  font-weight: 500;
+  margin: 0 3rem;
+}
+
+footer > .about-logo {
+  margin-left: 3rem;
+}
+
+footer > .about-logo > i {
+  color: rgb(190, 190, 190);
+}
+
+/*media query starts here*/
+
+/*for navigation bar hamburger menu*/
+@media (max-width: 480px) {
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .nav-items {
+    display: none;
+  }
+
+  .nav-items ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.2rem;
+  }
+
+  .nav-items li {
+    margin-bottom: 0.9rem;
+  }
+
+  .nav-items.active {
+    display: flex;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    position: fixed;
+  }
+
+  .project-img > img {
+    width: 15rem;
+    height: auto;
+  }
+
+  .project-img img.thank-you-img {
+    width: 15rem;
+    height: auto;
+  }
+
+  .project-2 > .project-img > img {
+    width: 15rem;
+    height: 12rem;
+    background: linear-gradient(45deg, #8bd6c5, #ec949475);
+  }
+
+  .project-skill-para {
+    margin-right: 1rem;
+  }
+}
+/*media query for hamburger menu ends here*/
+
+/* media query for mobile 320px */
+@media only screen and(max-width: 480px) {
+  .about-container,
+  .skill-container,
+  .my-projects,
+  .lets-chat,
+  footer {
+    min-width: 480px;
+  }
+
+  html body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+/*media query for tablet*/
+@media (min-width: 480px) and (max-width: 690px) {
+  .about-title {
+    font-size: 4rem;
+    font-weight: 500;
+  }
+
+  .profile-image {
+    margin: 2rem 0 0 2rem;
+    /* width: 140%; */
+  }
+
+  .profile-image img {
+    min-width: 108%;
+  }
+
+  .my-skills {
+    margin-top: 2rem;
+    height: 4vh;
+  }
+
+  .my-skills h5 {
+    font-size: 1.4rem;
+    /* font-size: 1.1rem; */
+  }
+
+  .profile_skill_flex {
+    display: flex;
+    height: 45vh;
+  }
+
+  /*looking for cv*/
+  .CV {
+    margin-top: 2.5rem;
+  }
+
+  /*skill of interactive rating */
+  .project-skill {
+    justify-content: flex-start;
+    margin-left: 2rem;
+  }
+
+  /*image of interactive rating */
+
+  /*image of rock-paper rating */
+  .project-img > .rock_img {
+    margin-left: 2rem;
+  }
+
+  /*lets-chat container*/
+  .lets-chat > h2 {
+    font-size: 3.6rem;
+  }
+
+  .lets-chat-email {
+    font-size: 1.8rem;
+  }
+
+  .CV-btn {
+    font-size: 1.4rem;
+  }
+}
+
+/*media query for laptop*/
+@media (min-width: 690px) and (max-width: 1024px) {
+  .about-cover {
+    padding: 0 5.5rem;
+  }
+
+  .about {
+    padding-top: 7.5rem;
+    display: block;
+  }
+
+  .about-title {
+    font-size: 3.8rem;
+    font-weight: 400;
+    width: 45vw;
+  }
+
+  .about-paragraph {
+    width: 45vw;
+  }
+
+  .profile-image img {
+    min-width: 108%;
+  }
+
+  .my-skills {
+    margin-top: 2rem;
+    height: 4vh;
+  }
+
+  .my-skills h5 {
+    height: min-content;
+    font-size: 1.6rem;
+  }
+
+  .profile_skill_flex {
+    display: flex;
+    padding: 0 3.2rem;
+  }
+}
+
+/*media query for large laptop */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .navbar #name {
+    font-size: 2rem;
+  }
+
+  .nav-items ul li {
+    font-size: 1.5rem;
+  }
+
+  .about-cover {
+    padding: 0 5.5rem;
+  }
+
+  .about {
+    padding-top: 7.5rem;
+    display: block;
+  }
+
+  .about-title {
+    font-size: 4rem;
+    font-weight: 450;
+    width: 45vw;
+  }
+
+  .about-paragraph {
+    width: 45vw;
+    font-size: 1.4rem;
+  }
+
+  .skill-title {
+    font-size: 3rem;
+  }
+
+  .profile-image img {
+    min-width: 103%;
+  }
+
+  .my-skills {
+    margin-top: 6rem;
+    height: 4vh;
+  }
+
+  .my-skills h5 {
+    height: min-content;
+    font-size: 1.9rem;
+  }
+
+  .profile_skill_flex {
+    display: flex;
+    padding: 0.5rem 2.2rem;
+  }
+
+  .bio h3 {
+    font-size: 2rem;
+  }
+
+  .bio p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+
+  .project-img > img {
+    margin: 3rem;
+  }
+
+  .project-img {
+    display: flex;
+    justify-content: center;
+  }
+
+  .project-img > img > .thank-you-img {
+    display: none;
+  }
+
+  .bio {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .bio > section {
+    padding: 0 1.8rem;
+  }
+
+  .CV {
+    font-size: 2rem;
+  }
+
+  .CV-btn {
+    font-size: 1.5rem;
+  }
+
+  .project-main-title {
+    font-size: 2.7rem;
+  }
+}
